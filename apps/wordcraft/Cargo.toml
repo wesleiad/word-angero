@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 publish = false
-default-run = "wordcraft"
+default-run = "word-angero"
 description = "WordCraft desktop app"
 
 [lints]
@@ -23,6 +23,7 @@ eframe = { workspace = true, features = ["default_fonts", "wgpu", "accesskit", "
 egui = { workspace = true }
 serde_json = { workspace = true }
 log = { workspace = true }
+zip = { workspace = true }  # Office Angerô: atualização automática
 
 [build-dependencies]
 # Icon + VERSIONINFO for wordcraft.exe; build.rs only uses it when the target is Windows.
@@ -82,3 +83,7 @@ pollster = "0.4"
 arboard = { workspace = true, features = ["image-data"] }
 # The control server's random key.
 getrandom = "0.3"
+
+[[bin]]
+name = "word-angero"
+path = "src/main.rs"

@@ -7,7 +7,7 @@ publish = false
 description = "WordCraft command line: convert, inspect, render, run commands, MCP server"
 
 [[bin]]
-name = "wordcraft-cli"
+name = "word-angero-cli"
 path = "src/main.rs"
 
 [lints]

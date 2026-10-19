@@ -1,4 +1,4 @@
-//! `wordcraft-cli convert page.html out.docx` puts an HTML file, which gives no page size, on the
+//! `word-angero-cli convert page.html out.docx` puts an HTML file, which gives no page size, on the
 //! system region's paper, as the app does: A4 in Italy, Letter in the US (#1381).
 
 use std::process::Command;

@@ -1,4 +1,4 @@
-//! `wordcraft-cli run`: a picture inserted by `--cmd insert.picture` stays in the saved file when
+//! `word-angero-cli run`: a picture inserted by `--cmd insert.picture` stays in the saved file when
 //! the next commands type (#965).
 
 use std::process::Command;

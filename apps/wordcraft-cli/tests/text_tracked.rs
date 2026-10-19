@@ -1,4 +1,4 @@
-//! #866: `wordcraft-cli text` omits tracked deletions (it does not go through `document.text`).
+//! #866: `word-angero-cli text` omits tracked deletions (it does not go through `document.text`).
 
 use std::process::Command;
 

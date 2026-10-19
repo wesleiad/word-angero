@@ -5160,6 +5160,7 @@ dependencies = [
  "wordcraft-proof",
  "wordcraft-ui-egui",
  "zbus",
+ "zip",
 ]
 
 [[package]]
