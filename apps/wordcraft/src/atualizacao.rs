@@ -101,9 +101,13 @@ mod windows {
             return;
         }
         let Some(pasta) = std::env::current_exe().ok().and_then(|p| p.parent().map(Path::to_path_buf)) else { return };
-        // restos da troca anterior
-        for nome in [format!("{exe}.exe.old"), format!("{exe}-cli.exe.old")] {
-            let _ = std::fs::remove_file(pasta.join(nome));
+        // restos da troca anterior (o .exe antigo só pode ser apagado depois que o programa fechou)
+        for entrada in std::fs::read_dir(&pasta).into_iter().flatten().flatten() {
+            let nome = entrada.file_name();
+            let nome = nome.to_string_lossy();
+            if nome.ends_with(".old") || nome.ends_with(".novo") {
+                let _ = std::fs::remove_file(entrada.path());
+            }
         }
         if !pasta.join("versao.txt").is_file() {
             return; // cópia de desenvolvimento
