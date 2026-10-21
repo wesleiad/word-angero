@@ -74,3 +74,90 @@ pub fn botoes(ui: &mut Ui, barra: Rect, cor: Color32) -> f32 {
     }
     3.0 * LARGURA_BOTAO
 }
+
+/// Opacity of the bar's colour over the wallpaper: enough to keep the text readable, with the
+/// wallpaper's tone still showing through (Windows 11 Mica).
+const VEU: u8 = 165;
+
+/// Windows 11 "Mica" look for the title bar: the desktop wallpaper, small and heavily blurred, cut to
+/// the part of the screen behind `barra`, under a veil of the bar's colour `cor` — what DWM does for
+/// Mica. Drawn by the app itself so it works on any GPU and driver (a truly transparent window needs
+/// DirectComposition); without a wallpaper picture (solid colour desktop) the bar keeps its colour.
+pub fn fundo_mica(ui: &Ui, barra: Rect, cor: Color32) {
+    if !SEM_BARRA_DO_SISTEMA {
+        return;
+    }
+    let Some(tex) = textura_papel(ui.ctx()) else { return };
+    let (janela, monitor) = ui.ctx().input(|i| (i.viewport().inner_rect, i.viewport().monitor_size));
+    let (Some(janela), Some(monitor)) = (janela, monitor) else { return };
+    if monitor.x < 1.0 || monitor.y < 1.0 {
+        return;
+    }
+    // Where the bar is on its monitor; each monitor shows the whole wallpaper, scaled to fill it.
+    let x = janela.min.x.rem_euclid(monitor.x) + barra.min.x;
+    let y = janela.min.y.rem_euclid(monitor.y) + barra.min.y;
+    let [iw, ih] = tex.size().map(|v| v as f32);
+    let escala = (monitor.x / iw).max(monitor.y / ih);
+    let (lw, lh) = (iw * escala, ih * escala);
+    let (ox, oy) = ((monitor.x - lw) / 2.0, (monitor.y - lh) / 2.0);
+    let uv = Rect::from_min_max(
+        pos2((x - ox) / lw, (y - oy) / lh),
+        pos2((x + barra.width() - ox) / lw, (y + barra.height() - oy) / lh),
+    );
+    let p = ui.painter();
+    p.image(tex.id(), barra, uv, Color32::WHITE);
+    p.rect_filled(barra, 0.0, Color32::from_rgba_unmultiplied(cor.r(), cor.g(), cor.b(), VEU));
+}
+
+/// The blurred wallpaper, decoded once on a background thread (the first frames show the plain bar).
+static PAPEL: std::sync::OnceLock<std::sync::Mutex<Option<Option<egui::ColorImage>>>> = std::sync::OnceLock::new();
+
+fn textura_papel(ctx: &egui::Context) -> Option<egui::TextureHandle> {
+    let id = egui::Id::new("angero_mica");
+    if let Some(t) = ctx.data(|d| d.get_temp::<egui::TextureHandle>(id)) {
+        return Some(t);
+    }
+    let mut primeira = false;
+    let estado = PAPEL.get_or_init(|| {
+        primeira = true;
+        std::sync::Mutex::new(None)
+    });
+    if primeira {
+        let c = ctx.clone();
+        std::thread::spawn(move || {
+            let img = carregar_papel();
+            if let Some(m) = PAPEL.get()
+                && let Ok(mut g) = m.lock()
+            {
+                *g = Some(img);
+            }
+            c.request_repaint();
+        });
+        return None;
+    }
+    let mut g = estado.lock().ok()?;
+    match g.take() {
+        Some(Some(img)) => {
+            let t = ctx.load_texture("angero_mica", img, egui::TextureOptions::LINEAR);
+            ctx.data_mut(|d| d.insert_temp(id, t.clone()));
+            Some(t)
+        }
+        Some(None) => {
+            *g = Some(None); // no wallpaper picture: keep the plain bar
+            None
+        }
+        None => None, // still decoding
+    }
+}
+
+/// The Windows wallpaper (the copy Windows keeps for the desktop), 64 px wide and blurred.
+fn carregar_papel() -> Option<egui::ColorImage> {
+    let pasta = std::env::var_os("APPDATA")?;
+    let bytes = std::fs::read(std::path::Path::new(&pasta).join(r"Microsoft\Windows\Themes\TranscodedWallpaper")).ok()?;
+    let img = image::load_from_memory(&bytes).ok()?.to_rgb8();
+    let w = 64u32;
+    let h = ((img.height() as f32 / img.width().max(1) as f32) * w as f32).round().max(1.0) as u32;
+    let pequena = image::imageops::resize(&img, w, h, image::imageops::FilterType::Triangle);
+    let borrada = image::imageops::blur(&pequena, 2.5);
+    Some(egui::ColorImage::from_rgb([w as usize, h as usize], borrada.as_raw()))
+}

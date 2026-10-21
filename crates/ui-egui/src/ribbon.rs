@@ -300,6 +300,9 @@ pub fn show(app: &mut WordApp, ui: &mut Ui) {
         .exact_size(30.0)
         .frame(egui::Frame::NONE.fill(t.tab_strip).inner_margin(egui::Margin { left: 8, right: 10, top: 0, bottom: 0 }))
         .show(ui, |ui| {
+            // Angerô: Mica continues from the title bar (the frame's margins are outside max_rect).
+            let r = ui.max_rect();
+            crate::janela::fundo_mica(ui, Rect::from_min_max(r.min - vec2(8.0, 0.0), r.max + vec2(10.0, 0.0)), t.tab_strip);
             ui.horizontal_centered(|ui| {
                 ui.spacing_mut().item_spacing = vec2(2.0, 0.0);
                 // Share, Editing mode and Comments keep their room; the tabs get what is left of it
