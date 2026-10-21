@@ -2300,3 +2300,354 @@
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Digite um tamanho em qualquer unidade, como 5 cm ou 300 px. O outro lado acompanha, e a imagem mantém as proporções.
 
 	Import…	Importar…
+
+# Angerô: textos que só tinham espanhol (estilos, equações, marcas-d'água, saudações).
+	Book Title	Título do Livro
+	Category	Categoria
+	Contributors	Colaboradores
+	Emphasis	Ênfase
+	Endnote Reference	Referência de Nota de Fim
+	Endnote Text	Texto de Nota de Fim
+	Footnote Reference	Referência de Nota de Rodapé
+	Footnote Text	Texto de Nota de Rodapé
+	Hyperlink	Hiperlink
+	Intense Emphasis	Ênfase Intensa
+	Intense Quote	Citação Intensa
+	Intense Reference	Referência Intensa
+	Keywords	Palavras-chave
+	No Spacing	Sem Espaçamento
+	Quote	Citação
+	Strong	Forte
+	Subject	Assunto
+	Subtitle	Subtítulo
+	Subtle Emphasis	Ênfase Sutil
+	Subtle Reference	Referência Sutil
+	TOC Heading	Título do Sumário
+	TOC {n}	Sumário {n}
+	Track\nChanges	Controlar\nAlterações
+	Track\nChanges ✓	Controlar\nAlterações ✓
+	List Paragraph	Parágrafo da Lista
+	Models	Modelos
+	Good morning	Bom dia
+	Good afternoon	Boa tarde
+	Good evening	Boa noite
+	Typing	Digitação
+	Bayes' rule	Regra de Bayes
+	Binomial expansion of (x+a)ⁿ	Expansão binomial de (x+a)ⁿ
+	Circle area from its radius	Área do círculo a partir do raio
+	Convert between built-up and linear form	Converter entre o formato profissional e o linear
+	Derivative as a limit	Derivada como limite
+	Euler's identity	Identidade de Euler
+	Exponential series	Série exponencial
+	Integral of e^(−x²)	Integral de e^(−x²)
+	Justification of a display equation	Alinhamento de uma equação em linha própria
+	Normal probability density	Densidade de probabilidade normal
+	Number the equation; the number sits at the right margin (or type # then the number)	Numerar a equação; o número fica na margem direita (ou digite # e depois o número)
+	Power series of (1+x)ⁿ	Série de potências de (1+x)ⁿ
+	Roots of ax²+bx+c	Raízes de ax²+bx+c
+	Show the equation in the line of text	Mostrar a equação na linha do texto
+	Show the equation on a line of its own	Mostrar a equação em uma linha própria
+	Sides of a right triangle	Lados de um triângulo retângulo
+	Sine and cosine series of f(x)	Série de senos e cossenos de f(x)
+	Sum of cosines	Soma de cossenos
+	Sum or difference of sines	Soma ou diferença de senos
+	Type equations in LaTeX	Digitar equações em LaTeX
+	Type equations in the linear format (UnicodeMath)	Digitar equações no formato linear (UnicodeMath)
+	Type normal (non-math) text in the equation	Digitar texto normal (não matemático) na equação
+	Level 1	Nível 1
+	Level 2	Nível 2
+	Level 3	Nível 3
+	Level 4	Nível 4
+	Level 5	Nível 5
+	Level 6	Nível 6
+	Level 7	Nível 7
+	Level 8	Nível 8
+	Level 9	Nível 9
+	1×2 Empty Matrix	Matriz Vazia 1×2
+	1×3 Empty Matrix	Matriz Vazia 1×3
+	2×1 Empty Matrix	Matriz Vazia 2×1
+	2×2 Determinant	Determinante 2×2
+	2×2 Empty Matrix	Matriz Vazia 2×2
+	2×2 Identity Matrix	Matriz Identidade 2×2
+	2×2 Identity Matrix (sparse)	Matriz Identidade 2×2 (esparsa)
+	2×2 Matrix in Brackets	Matriz 2×2 entre Colchetes
+	2×2 Matrix in Double Bars	Matriz 2×2 entre Barras Duplas
+	2×2 Matrix in Parentheses	Matriz 2×2 entre Parênteses
+	2×3 Empty Matrix	Matriz Vazia 2×3
+	3×1 Empty Matrix	Matriz Vazia 3×1
+	3×2 Empty Matrix	Matriz Vazia 3×2
+	3×3 Empty Matrix	Matriz Vazia 3×3
+	3×3 Identity Matrix	Matriz Identidade 3×3
+	3×3 Identity Matrix (sparse)	Matriz Identidade 3×3 (esparsa)
+	A xor B	A xor B
+	ASAP	O MAIS RÁPIDO POSSÍVEL
+	AaBbCcDd	AaBbCcDd
+	Absolute value cases	Casos do valor absoluto
+	Accents	Acentos
+	Acute	Acento Agudo
+	All - Linear	Tudo - Linear
+	All - Professional	Tudo - Profissional
+	Angle Brackets	Colchetes Angulares
+	Angle Brackets with Separator	Colchetes Angulares com Separador
+	Angle Brackets with Two Separators	Colchetes Angulares com Dois Separadores
+	Annotation Reference	Referência de Comentário
+	Annotation Subject	Assunto do Comentário
+	Annotation Text	Texto de Comentário
+	Baseline Dots	Pontos na Linha de Base
+	Basic Math	Matemática Básica
+	Binomial Coefficient	Coeficiente Binomial
+	Binomial Coefficient (angle)	Coeficiente Binomial (angular)
+	Binomial Coefficient with Angle Brackets	Coeficiente Binomial com Colchetes Angulares
+	Body text in a short paragraph to show spacing.	Texto do corpo em um parágrafo curto para mostrar o espaçamento.
+	Boxed Formula	Fórmula em Caixa
+	Boxed Formula (example)	Fórmula em Caixa (exemplo)
+	Boxed Formulas	Fórmulas em Caixa
+	Braces	Chaves
+	Braces with Separator	Chaves com Separador
+	Brackets	Colchetes
+	Brackets with Separators	Colchetes com Separadores
+	Breve	Breve
+	CONFIDENTIAL	CONFIDENCIAL
+	Cases (Three Conditions)	Casos (Três Condições)
+	Cases (Two Conditions)	Casos (Duas Condições)
+	Cases and Stacks	Casos e Pilhas
+	Ceiling	Teto
+	Centered as Group	Centralizado como Grupo
+	Change in y over change in x	Variação de y sobre variação de x
+	Check	Caron
+	Circled Dot	Ponto em Círculo
+	Circled Plus	Mais em Círculo
+	Circled Times	Multiplicação em Círculo
+	Colon Equal	Dois-Pontos Igual
+	Common Accent Objects	Objetos de Acento Comuns
+	Common Brackets	Colchetes Comuns
+	Common Fractions	Frações Comuns
+	Common Functions	Funções Comuns
+	Common Large Operators	Operadores Grandes Comuns
+	Common Operator Structures	Estruturas de Operadores Comuns
+	Common Operators	Operadores Comuns
+	Common Radicals	Radicais Comuns
+	Common Subscripts and Superscripts	Subscritos e Sobrescritos Comuns
+	Contour Integral	Integral de Contorno
+	Contour Integral with Limits	Integral de Contorno com Limites
+	Contour Integral with Stacked Limits	Integral de Contorno com Limites Empilhados
+	Contour Integrals	Integrais de Contorno
+	Coproduct	Coproduto
+	Coproduct with Limits	Coproduto com Limites
+	Coproduct with Lower Limit	Coproduto com Limite Inferior
+	Coproduct with Subscript-Superscript Limits	Coproduto com Limites Subscrito-Sobrescrito
+	Cosecant Function	Função Cossecante
+	Cosine 2x	Cosseno de 2x
+	Cosine Function	Função Cosseno
+	Cotangent Function	Função Cotangente
+	Cube Root	Raiz Cúbica
+	Current - Linear	Atual - Linear
+	DO NOT COPY	NÃO COPIAR
+	DRAFT	RASCUNHO
+	Default Paragraph Font	Fonte Parágrafo Padrão
+	Delta Equal To	Delta Igual a
+	Delta over arrow	Delta sobre a seta
+	Diagonal Dots	Reticências Diagonais
+	Differential	Diferencial
+	Differential theta	Diferencial teta
+	Differential x	Diferencial x
+	Differential y	Diferencial y
+	Differentials	Diferenciais
+	Dot	Ponto
+	Dots	Reticências
+	Double Bar	Barra Dupla
+	Double Dot	Ponto Duplo
+	Double Integral	Integral Dupla
+	Double Integral with Limits	Integral Dupla com Limites
+	Double Integral with Stacked Limits	Integral Dupla com Limites Empilhados
+	Double Left Arrow with Text Above	Seta Dupla para a Esquerda com Texto Acima
+	Double Left Arrow with Text Below	Seta Dupla para a Esquerda com Texto Abaixo
+	Double Left Right Arrow with Text Above	Seta Dupla Bidirecional com Texto Acima
+	Double Left Right Arrow with Text Below	Seta Dupla Bidirecional com Texto Abaixo
+	Double Right Arrow with Text Above	Seta Dupla para a Direita com Texto Acima
+	Double Right Arrow with Text Below	Seta Dupla para a Direita com Texto Abaixo
+	Double Square Brackets	Colchetes Duplos
+	Double Vertical Bars	Barras Verticais Duplas
+	Double summation	Somatório duplo
+	Empty Matrices	Matrizes Vazias
+	Envelope Address	Endereço do Envelope
+	Envelope Return	Remetente do Envelope
+	Equal Equal	Igual Igual
+	Equal by Definition	Igual por Definição
+	Exponential	Exponencial
+	Floor	Piso
+	Functions	Funções
+	Geometry	Geometria
+	Grave	Acento Grave
+	Greek Letters	Letras Gregas
+	Grid Table 1 Light	Tabela de Grade 1 Clara
+	Grouping Character Above	Caractere de Agrupamento Acima
+	Grouping Character Below	Caractere de Agrupamento Abaixo
+	Hat	Acento Circunflexo
+	Hyperbolic Cosecant Function	Função Cossecante Hiperbólica
+	Hyperbolic Cosine Function	Função Cosseno Hiperbólico
+	Hyperbolic Cotangent Function	Função Cotangente Hiperbólica
+	Hyperbolic Functions	Funções Hiperbólicas
+	Hyperbolic Secant Function	Função Secante Hiperbólica
+	Hyperbolic Sine Function	Função Seno Hiperbólico
+	Hyperbolic Tangent Function	Função Tangente Hiperbólica
+	Hypotenuse	Hipotenusa
+	Identity Matrices	Matrizes Identidade
+	Index Heading	Título do Índice
+	Integral with Limits	Integral com Limites
+	Integral with Stacked Limits	Integral com Limites Empilhados
+	Integrals	Integrais
+	Intersection	Interseção
+	Intersection with Limits	Interseção com Limites
+	Intersection with Lower Limit	Interseção com Limite Inferior
+	Intersection with Subscript-Superscript Limits	Interseção com Limites Subscrito-Sobrescrito
+	Inverse Cosecant Function	Função Cossecante Inversa
+	Inverse Cosine Function	Função Cosseno Inverso
+	Inverse Cotangent Function	Função Cotangente Inversa
+	Inverse Functions	Funções Inversas
+	Inverse Hyperbolic Cosecant Function	Função Cossecante Hiperbólica Inversa
+	Inverse Hyperbolic Cosine Function	Função Cosseno Hiperbólico Inverso
+	Inverse Hyperbolic Cotangent Function	Função Cotangente Hiperbólica Inversa
+	Inverse Hyperbolic Functions	Funções Hiperbólicas Inversas
+	Inverse Hyperbolic Secant Function	Função Secante Hiperbólica Inversa
+	Inverse Hyperbolic Sine Function	Função Seno Hiperbólico Inverso
+	Inverse Hyperbolic Tangent Function	Função Tangente Hiperbólica Inversa
+	Inverse Secant Function	Função Secante Inversa
+	Inverse Sine Function	Função Seno Inverso
+	Inverse Tangent Function	Função Tangente Inversa
+	Left Arrow with Text Above	Seta para a Esquerda com Texto Acima
+	Left Arrow with Text Below	Seta para a Esquerda com Texto Abaixo
+	Left Bracket Twice	Dois Colchetes Esquerdos
+	Left Right Arrow Above	Seta Bidirecional Acima
+	Left Right Arrow with Text Above	Seta Bidirecional com Texto Acima
+	Left Right Arrow with Text Below	Seta Bidirecional com Texto Abaixo
+	Left Subscript-Superscript	Subscrito-Sobrescrito à Esquerda
+	Leftwards Arrow Above	Seta para a Esquerda Acima
+	Leftwards Harpoon Above	Arpão para a Esquerda Acima
+	Letter-Like Symbols	Símbolos Semelhantes a Letras
+	Limit	Limite
+	Limit Example	Exemplo de Limite
+	Line Number	Número de Linha
+	Linear Fraction	Fração Linear
+	Logarithm	Logaritmo
+	Logarithm with Base	Logaritmo com Base
+	Logical AND	E Lógico
+	Logical AND with Limits	E Lógico com Limites
+	Logical OR	OU Lógico
+	Logical OR with Limits	OU Lógico com Limites
+	Matrices with Brackets	Matrizes com Colchetes
+	Maximum	Máximo
+	Maximum Example	Exemplo de Máximo
+	Measured By	Medido por
+	Midline Dots	Reticências Centrais
+	Minimum	Mínimo
+	Minus Equal	Menos Igual
+	Natural Logarithm	Logaritmo Natural
+	Negated Relations	Relações Negadas
+	Normal	Normal
+	Normal Indent	Recuo Normal
+	Normal Table	Tabela Normal
+	One half	Um meio
+	Operator Structures	Estruturas de Operadores
+	Operators	Operadores
+	Outward Brackets	Colchetes para Fora
+	Overbar	Barra Superior
+	Overbars and Underbars	Barras Superiores e Inferiores
+	Overbrace	Chave Superior
+	Parentheses	Parênteses
+	Parentheses with Separator	Parênteses com Separador
+	Partial Differential	Diferencial Parcial
+	Pi Over 2	Pi Sobre 2
+	Plain Table 1	Tabela Simples 1
+	Plus Equal	Mais Igual
+	Product	Produto
+	Product of A	Produto de A
+	Product with Limits	Produto com Limites
+	Product with Lower Limit	Produto com Limite Inferior
+	Product with Subscript-Superscript Limits	Produto com Limites Subscrito-Sobrescrito
+	Products and Coproducts	Produtos e Coprodutos
+	Quadratic Root	Fórmula de Bhaskara
+	Radical with Degree	Radical com Grau
+	Radicals	Radicais
+	Right Arrow with Text Above	Seta para a Direita com Texto Acima
+	Right Arrow with Text Below	Seta para a Direita com Texto Abaixo
+	Right Bracket Twice	Dois Colchetes Direitos
+	Rightwards Arrow Above	Seta para a Direita Acima
+	Rightwards Harpoon Above	Arpão para a Direita Acima
+	SAMPLE	AMOSTRA
+	Scripts	Scripts
+	Secant Function	Função Secante
+	Sine Function	Função Seno
+	Sine theta	Seno de teta
+	Single Brackets	Colchetes Simples
+	Single Left Angle	Colchete Angular Esquerdo Simples
+	Single Left Bar	Barra Esquerda Simples
+	Single Left Brace	Chave Esquerda Simples
+	Single Left Bracket	Colchete Esquerdo Simples
+	Single Left Parenthesis	Parêntese Esquerdo Simples
+	Single Right Brace	Chave Direita Simples
+	Single Right Bracket	Colchete Direito Simples
+	Single Right Parenthesis	Parêntese Direito Simples
+	Skewed Fraction	Fração Inclinada
+	Small change	Pequena variação
+	Sparse Matrices	Matrizes Esparsas
+	Square Root	Raiz Quadrada
+	Square Root with Degree	Raiz Quadrada com Grau
+	Square Union	União Quadrada
+	Stack Object	Objeto Empilhado
+	Stack Object (Three)	Objeto Empilhado (Três)
+	Stacked Fraction	Fração Empilhada
+	Stacked, no bar	Empilhada, sem barra
+	Subscript-Superscript	Subscrito-Sobrescrito
+	Subscripts and Superscripts	Subscritos e Sobrescritos
+	Summation	Somatório
+	Summation from 0 to n	Somatório de 0 a n
+	Summation over binomials	Somatório de binômios
+	Summation with Limits	Somatório com Limites
+	Summation with Lower Limit	Somatório com Limite Inferior
+	Summation with Subscript Limit	Somatório com Limite Subscrito
+	Summation with Subscript-Superscript Limits	Somatório com Limites Subscrito-Sobrescrito
+	Summations	Somatórios
+	Surface Integral	Integral de Superfície
+	Surface Integral with Limits	Integral de Superfície com Limites
+	Surface Integral with Stacked Limits	Integral de Superfície com Limites Empilhados
+	TOA Heading	Título do Índice de Autoridades
+	Table Grid	Tabela com Grade
+	Table of Figures	Índice de Ilustrações
+	Tangent Function	Função Tangente
+	Tangent formula	Fórmula da tangente
+	Text over Colon Equal	Texto sobre Dois-Pontos Igual
+	Text over Equal	Texto sobre Igual
+	Tilde	Til
+	Trigonometric Functions	Funções Trigonométricas
+	Triple Dot	Ponto Triplo
+	Triple Integral	Integral Tripla
+	Triple Integral with Limits	Integral Tripla com Limites
+	Triple Integral with Stacked Limits	Integral Tripla com Limites Empilhados
+	URGENT	URGENTE
+	Underbar	Barra Inferior
+	Underbrace	Chave Inferior
+	Union	União
+	Union of intersections	União de interseções
+	Union with Limits	União com Limites
+	Union with Lower Limit	União com Limite Inferior
+	Union with Plus	União com Sinal de Mais
+	Union with Subscript-Superscript Limits	União com Limites Subscrito-Sobrescrito
+	Unions and Intersections	Uniões e Interseções
+	Up Diagonal Dots	Reticências Diagonais para Cima
+	Vector A	Vetor A
+	Vector AB	Vetor AB
+	Vertical Bars	Barras Verticais
+	Vertical Dots	Reticências Verticais
+	Volume Integral	Integral de Volume
+	Volume Integral with Limits	Integral de Volume com Limites
+	Volume Integral with Stacked Limits	Integral de Volume com Limites Empilhados
+	Yields	Resulta em
+	n×n Identity Matrix	Matriz Identidade n×n
+	n×n Matrix	Matriz n×n
+	tOGGLE cASE	aLTERNAR mAIÚSCULAS/mINÚSCULAS
+	x bar	x barra
+	✓ None	✓ Nenhum
+preview	Title	Título
+	Current - Professional	Atual - Profissional
+	Other Large Operators	Outros Operadores Grandes

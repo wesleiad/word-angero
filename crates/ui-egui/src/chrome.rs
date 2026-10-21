@@ -275,6 +275,8 @@ pub fn title_bar(app: &mut WordApp, ui: &mut Ui) {
                 let max = ui.ctx().input(|i| i.viewport().maximized.unwrap_or(false));
                 ui.ctx().send_viewport_cmd(egui::ViewportCommand::Maximized(!max));
             }
+            // The frame's 10 pt right margin is outside `full`; the buttons sit in the corner.
+            let botoes_janela = crate::janela::botoes(ui, Rect::from_min_max(full.min, pos2(full.max.x + 10.0, full.max.y)), t.text);
             let mut qat_end = full.min.x;
             let mut right_start = full.max.x;
             ui.horizontal_centered(|ui| {
@@ -316,6 +318,7 @@ pub fn title_bar(app: &mut WordApp, ui: &mut Ui) {
                 }
                 qat_end = ui.min_rect().max.x;
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                    ui.add_space(botoes_janela);
                     // Account / community.
                     let (r, resp) = ui.allocate_exact_size(vec2(control_h, control_h), Sense::click());
                     ui.painter().circle_filled(r.center(), control_h / 2.0 - 1.0, t.accent);
