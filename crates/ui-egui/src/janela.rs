@@ -161,3 +161,49 @@ fn carregar_papel() -> Option<egui::ColorImage> {
     let borrada = image::imageops::blur(&pequena, 2.5);
     Some(egui::ColorImage::from_rgb([w as usize, h as usize], borrada.as_raw()))
 }
+
+/// Thickness of the grab strip along each window edge, in points.
+const BORDA: f32 = 5.0;
+
+/// Resizing by the window edges and corners. Without the system frame Windows has no edge to grab
+/// (the client area covers the whole window), so the app does it: a thin strip on each side, above
+/// everything else, that shows the resize cursor and hands the drag to the system.
+pub fn bordas(ctx: &egui::Context) {
+    use egui::{CursorIcon, ResizeDirection as D};
+    if !SEM_BARRA_DO_SISTEMA {
+        return;
+    }
+    let (maximizada, cheia) = ctx.input(|i| (i.viewport().maximized.unwrap_or(false), i.viewport().fullscreen.unwrap_or(false)));
+    if maximizada || cheia {
+        return;
+    }
+    let r = ctx.content_rect();
+    let (b, c) = (BORDA, 2.0 * BORDA);
+    let zonas = [
+        (D::NorthWest, CursorIcon::ResizeNorthWest, Rect::from_min_size(r.left_top(), vec2(c, c))),
+        (D::NorthEast, CursorIcon::ResizeNorthEast, Rect::from_min_size(pos2(r.right() - c, r.top()), vec2(c, c))),
+        (D::SouthWest, CursorIcon::ResizeSouthWest, Rect::from_min_size(pos2(r.left(), r.bottom() - c), vec2(c, c))),
+        (D::SouthEast, CursorIcon::ResizeSouthEast, Rect::from_min_size(pos2(r.right() - c, r.bottom() - c), vec2(c, c))),
+        (D::North, CursorIcon::ResizeNorth, Rect::from_min_max(pos2(r.left() + c, r.top()), pos2(r.right() - c, r.top() + b))),
+        (D::South, CursorIcon::ResizeSouth, Rect::from_min_max(pos2(r.left() + c, r.bottom() - b), pos2(r.right() - c, r.bottom()))),
+        (D::West, CursorIcon::ResizeWest, Rect::from_min_max(pos2(r.left(), r.top() + c), pos2(r.left() + b, r.bottom() - c))),
+        (D::East, CursorIcon::ResizeEast, Rect::from_min_max(pos2(r.right() - b, r.top() + c), pos2(r.right(), r.bottom() - c))),
+    ];
+    egui::Area::new(egui::Id::new("angero_bordas_janela"))
+        .order(egui::Order::Foreground)
+        .fixed_pos(r.min)
+        .interactable(true)
+        .show(ctx, |ui| {
+            for (i, (direcao, cursor, zona)) in zonas.into_iter().enumerate() {
+                let resp = ui.interact(zona, ui.id().with(("borda", i)), Sense::drag());
+                if resp.hovered() || resp.dragged() {
+                    ctx.set_cursor_icon(cursor);
+                }
+                // At the press itself, not after egui's drag threshold: the system takes over the
+                // mouse from where it went down.
+                if resp.is_pointer_button_down_on() && ctx.input(|i| i.pointer.primary_pressed()) {
+                    ctx.send_viewport_cmd(egui::ViewportCommand::BeginResize(direcao));
+                }
+            }
+        });
+}
