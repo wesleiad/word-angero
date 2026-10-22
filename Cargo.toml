@@ -103,4 +103,6 @@ debug = 0
 
 # Required by craft-pdf: the backend rejects writers that failed during unwinding.
 [patch.crates-io]
+# Office Angerô: epaint com as letras desenhadas pelo DirectWrite no Windows (vendor/epaint/ANGERO.md)
+epaint = { path = "vendor/epaint" }
 krilla = { git = "https://github.com/storytold/craft-libs", rev = "c3487320b2d1de657b860b3c8abb44e1f2b32bd8" }
