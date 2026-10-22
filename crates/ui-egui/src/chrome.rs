@@ -254,7 +254,6 @@ impl MacTitleBar {
 }
 
 pub fn title_bar(app: &mut WordApp, ui: &mut Ui) {
-    crate::janela::bordas(ui.ctx());
     let t = Tokens::get(ui.ctx());
     // macOS: shorter, so the system's traffic lights are centred in it; the tallest controls
     // shrink to keep a margin above and below them.

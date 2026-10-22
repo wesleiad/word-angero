@@ -189,7 +189,10 @@ pub fn bordas(ctx: &egui::Context) {
         (D::West, CursorIcon::ResizeWest, Rect::from_min_max(pos2(r.left(), r.top() + c), pos2(r.left() + b, r.bottom() - c))),
         (D::East, CursorIcon::ResizeEast, Rect::from_min_max(pos2(r.right() - b, r.top() + c), pos2(r.right(), r.bottom() - c))),
     ];
-    egui::Area::new(egui::Id::new("angero_bordas_janela"))
+    // Kept above the other Foreground areas (menus, the start screen), which are created later.
+    let id = egui::Id::new("angero_bordas_janela");
+    ctx.move_to_top(egui::LayerId::new(egui::Order::Foreground, id));
+    egui::Area::new(id)
         .order(egui::Order::Foreground)
         .fixed_pos(r.min)
         .interactable(true)
