@@ -11,6 +11,7 @@ description = "WordCraft desktop app"
 workspace = true
 
 [dependencies]
+memoria-angero = { path = "../../vendor/memoria-angero" }  # Office Angerô: janela cabendo na tela
 wordcraft-doc = { workspace = true }
 wordcraft-engine = { workspace = true }
 wordcraft-proof = { workspace = true }

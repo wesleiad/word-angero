@@ -1,0 +1,7 @@
+[package]
+name = "memoria-angero"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Office Angerô: chamadas ao Windows que precisam de unsafe (fora do forbid(unsafe_code) do workspace)"
+publish = false

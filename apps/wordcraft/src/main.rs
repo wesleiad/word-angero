@@ -371,12 +371,13 @@ fn main() -> eframe::Result {
         }
     }
     atualizacao::iniciar("word-angero", "word-angero");
+    let (janela_tam, janela_pos) = janela_inicial(1440.0, 920.0);
     let mut options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_title("Word")
             .with_app_id("ai.storyteller.wordcraft")
-            .with_inner_size([1440.0, 920.0])
-            .with_min_inner_size([760.0, 480.0])
+            .with_inner_size(janela_tam)
+            .with_min_inner_size([janela_tam.x.min(760.0), janela_tam.y.min(480.0)])
             .with_drag_and_drop(true)
             .with_fullsize_content_view(true)
             .with_titlebar_shown(false)
@@ -385,6 +386,9 @@ fn main() -> eframe::Result {
             .with_decorations(!wordcraft_ui_egui::janela::SEM_BARRA_DO_SISTEMA),
         ..Default::default()
     };
+    if let Some(pos) = janela_pos {
+        options.viewport = options.viewport.with_position(pos);
+    }
     if let Some(icon) = app_icon() {
         options.viewport = options.viewport.with_icon(icon);
     }
@@ -536,5 +540,17 @@ mod prefs_tests {
         assert!(write_prefs(&path, b"newer").is_err());
         assert_eq!(std::fs::read(&path).unwrap(), b"new");
         let _ = std::fs::remove_dir_all(&dir);
+    }
+}
+
+/// Office Angerô: tamanho e posição da janela ao abrir, cabendo na área livre da tela e centralizada
+/// (sem isso, em notebooks e telas com zoom de 125-150 % a janela passava da tela e o botão Fechar sumia).
+fn janela_inicial(largura: f32, altura: f32) -> (egui::Vec2, Option<egui::Pos2>) {
+    match memoria_angero::area_trabalho() {
+        Some((x, y, w, h)) => {
+            let tam = egui::vec2(largura.min(w * 0.92), altura.min(h * 0.92));
+            (tam, Some(egui::pos2(x + (w - tam.x) / 2.0, y + (h - tam.y) / 2.0)))
+        }
+        None => (egui::vec2(largura, altura), None),
     }
 }
