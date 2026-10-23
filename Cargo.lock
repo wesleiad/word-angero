@@ -2358,6 +2358,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "memoria-angero"
+version = "0.1.0"
+
+[[package]]
 name = "miniz_oxide"
 version = "0.8.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5139,6 +5143,7 @@ dependencies = [
  "fmv-macos-events",
  "getrandom 0.3.4",
  "log",
+ "memoria-angero",
  "objc2 0.6.5",
  "objc2-app-kit 0.3.2",
  "objc2-foundation 0.3.2",
