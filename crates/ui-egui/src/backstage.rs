@@ -146,8 +146,30 @@ pub fn show(app: &mut WordApp, ui: &mut Ui) {
                 }
             });
         });
+    let fundo = if recovery { egui::Color32::BLACK } else { t.ribbon };
+    // Angerô: without the system title bar the start screen and File view had no window buttons
+    // and nothing to drag the window by; as in Word, a band over the page holds both.
+    let faixa = crate::janela::SEM_BARRA_DO_SISTEMA && !mac;
+    if faixa {
+        egui::Panel::top("backstage_janela")
+            .show_separator_line(false)
+            .exact_size(32.0)
+            .frame(egui::Frame::NONE.fill(fundo))
+            .show(ui, |ui| {
+                let full = ui.max_rect();
+                let drag = ui.interact(full, ui.id().with("backstage_drag"), Sense::click_and_drag());
+                if drag.drag_started() {
+                    ui.ctx().send_viewport_cmd(egui::ViewportCommand::StartDrag);
+                }
+                if drag.double_clicked() {
+                    let max = ui.ctx().input(|i| i.viewport().maximized.unwrap_or(false));
+                    ui.ctx().send_viewport_cmd(egui::ViewportCommand::Maximized(!max));
+                }
+                crate::janela::botoes(ui, full, if recovery { egui::Color32::WHITE } else { t.text });
+            });
+    }
     egui::CentralPanel::default()
-        .frame(egui::Frame::NONE.fill(if recovery { egui::Color32::BLACK } else { t.ribbon }).inner_margin(egui::Margin::symmetric(40, 30)))
+        .frame(egui::Frame::NONE.fill(fundo).inner_margin(egui::Margin { left: 40, right: 40, top: if faixa { 4 } else { 30 }, bottom: 30 }))
         .show(ui, |ui| {
             // The Print page fills the pane and scrolls its settings and its preview itself (#1156).
             if app.ui.backstage_page == "print" {
