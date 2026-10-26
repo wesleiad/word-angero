@@ -2651,3 +2651,60 @@
 preview	Title	Título
 	Current - Professional	Atual - Profissional
 	Other Large Operators	Outros Operadores Grandes
+	Recover documents	Recuperar documentos
+	Restore opens an unsaved copy. Your original file stays unchanged.	Restaurar abre uma cópia não salva. O arquivo original continua sem alterações.
+	Recovery is disabled while this document has a password.	A recuperação fica desativada enquanto este documento tiver senha.
+	Local recovery is unavailable or still loading.	A recuperação local está indisponível ou ainda carregando.
+	No recovery copies.	Nenhuma cópia de recuperação.
+	Recovery copy	Cópia de recuperação
+	Restore	Restaurar
+	Discard…	Descartar…
+	Continue without restoring	Continuar sem restaurar
+	Browse in Word…	Procurar no Word…
+	Open a file with Word's own browser when the system file dialog doesn't appear.	Abre um arquivo pelo navegador do próprio Word quando a janela de arquivos do sistema não aparecer.
+	{language} (dictionary unreadable)	{language} (dicionário ilegível)
+	The spelling dictionary for {language} couldn't be read, so it isn't checked. File: {file}. Reason: {reason}	Não foi possível ler o dicionário de {language}, então a ortografia não é verificada. Arquivo: {file}. Motivo: {reason}
+	No spelling dictionary for {language} is installed, so it isn't checked. Word looks for the Hunspell dictionary {name} in the WORDCRAFT_DICTIONARIES folder and in the usual system locations.	Não há dicionário de {language} instalado, então a ortografia não é verificada. O Word procura o dicionário Hunspell {name} na pasta WORDCRAFT_DICTIONARIES e nos locais de costume do sistema.
+	select a picture first	selecione uma imagem primeiro
+	Crop on the page works on unturned pictures: set Rotation to 0° first, or use the crop boxes	O corte na página só funciona em imagens sem giro: ponha a Rotação em 0° antes ou use as caixas de corte
+	The number must be a divisor of {max}.	O número precisa ser um divisor de {max}.
+	Reference type:	Tipo de referência:
+	Insert reference to:	Inserir referência para:
+	For which item:	Para qual item:
+	Nothing of this type in the document.	Nada deste tipo no documento.
+	Automatically add words to list (First Letter)	Adicionar palavras à lista automaticamente (Primeira Letra)
+	Automatically add words to list (INitial CAps)	Adicionar palavras à lista automaticamente (DUas INiciais)
+	The system file dialog isn't available, so Word shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	A janela de arquivos do sistema não está disponível, então o Word mostra a dele. Para usar a do sistema, instale um portal de escolha de arquivos (como xdg-desktop-portal-gtk) ou o zenity.
+	No items to show.	Nenhum item para mostrar.
+	No new sources in that file	Nenhuma fonte nova nesse arquivo
+	Imported 1 source	1 fonte importada
+	Imported {n} sources	{n} fontes importadas
+	Couldn't save {name}, so it is still open and nothing was lost: {error}	Não foi possível salvar {name}; ele continua aberto e nada foi perdido: {error}
+	Wait for the print job to finish submitting before closing.	Espere a impressão terminar de ser enviada antes de fechar.
+	In Default apps, choose Word for the document types you want it to open.	Em Aplicativos padrão, escolha o Word para os tipos de documento que ele deve abrir.
+	Word is now the default app for Word documents.	O Word agora é o aplicativo padrão para documentos do Word.
+	Couldn't make Word the default: {error}	Não foi possível tornar o Word o padrão: {error}
+	Show the Start screen when Word starts	Mostrar a tela inicial ao abrir o Word
+	On: Word opens on File › Home, with a blank document, the templates and your recent documents. Off: it opens a blank document.	Ligado: o Word abre em Arquivo › Início, com documento em branco, modelos e documentos recentes. Desligado: abre um documento em branco.
+	{language}: {file} (unreadable: {reason})	{language}: {file} (ilegível: {reason})
+	AutoSave documents you have saved in Word	Salvar automaticamente os documentos que você já salvou no Word
+	Opens Settings › Default apps, where you choose Word for .docx and the other document types.	Abre Configurações › Aplicativos padrão, onde você escolhe o Word para .docx e os outros tipos de documento.
+	Opens .docx, .doc, .rtf and .odt files and Word templates with Word from now on.	Daqui em diante abre arquivos .docx, .doc, .rtf e .odt e modelos do Word com o Word.
+	Make Word the default for Word documents…	Tornar o Word o padrão para documentos do Word…
+	To open Word documents with Word by default: select one in Finder, choose File › Get Info, pick Word under Open with, then click Change All.	Para abrir documentos do Word com o Word por padrão: selecione um no Finder, escolha Arquivo › Obter Informações, escolha o Word em Abrir com e clique em Alterar Tudo.
+	Scale to paper size	Ajustar ao tamanho do papel
+	{paper}   {width} × {height}	{paper}   {width} × {height}
+	Open a document first	Abra um documento primeiro
+	{name} options	Opções de {name}
+	Current Document	Documento atual
+	Select a place in this document:	Selecione um local neste documento:
+	Top of the Document	Início do documento
+	Bookmarks	Indicadores
+	Find “{text}” in the document	Localizar “{text}” no documento
+	Discard the recovery copy of {name}?	Descartar a cópia de recuperação de {name}?
+	This cannot be undone. Your original file stays unchanged.	Isso não pode ser desfeito. O arquivo original continua sem alterações.
+	Discard	Descartar
+	Keep the password somewhere safe: without it nobody, Word included, can open the document. Leave both boxes empty to remove the password.	Guarde a senha em lugar seguro: sem ela ninguém, nem o Word, consegue abrir o documento. Deixe as duas caixas vazias para tirar a senha.
+	Enter bookmark name:	Digite o nome do indicador:
+	This document has no bookmarks.	Este documento não tem indicadores.
+	Type a page number, or +2 / -1.	Digite o número da página ou +2 / -1.

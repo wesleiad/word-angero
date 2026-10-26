@@ -2699,3 +2699,50 @@ preview	Title	Naslov
 	Type a size in any unit, such as 5 cm or 300 px. The other side follows, so the picture keeps its proportions.	Upišite veličinu u bilo kojoj jedinici, npr. 5 cm ili 300 px. Druga se strana prilagođava pa slika zadržava svoje proporcije.
 
 	Import…	Uvezi…
+	Recover documents	Recover documents
+	Restore opens an unsaved copy. Your original file stays unchanged.	Restore opens an unsaved copy. Your original file stays unchanged.
+	Recovery is disabled while this document has a password.	Recovery is disabled while this document has a password.
+	Local recovery is unavailable or still loading.	Local recovery is unavailable or still loading.
+	No recovery copies.	No recovery copies.
+	Recovery copy	Recovery copy
+	Restore	Restore
+	Discard…	Discard…
+	Continue without restoring	Continue without restoring
+	Browse in Word…	Browse in Word…
+	Open a file with Word's own browser when the system file dialog doesn't appear.	Open a file with Word's own browser when the system file dialog doesn't appear.
+	{language} (dictionary unreadable)	{language} (dictionary unreadable)
+	The spelling dictionary for {language} couldn't be read, so it isn't checked. File: {file}. Reason: {reason}	The spelling dictionary for {language} couldn't be read, so it isn't checked. File: {file}. Reason: {reason}
+	No spelling dictionary for {language} is installed, so it isn't checked. Word looks for the Hunspell dictionary {name} in the WORDCRAFT_DICTIONARIES folder and in the usual system locations.	No spelling dictionary for {language} is installed, so it isn't checked. Word looks for the Hunspell dictionary {name} in the WORDCRAFT_DICTIONARIES folder and in the usual system locations.
+	select a picture first	select a picture first
+	Crop on the page works on unturned pictures: set Rotation to 0° first, or use the crop boxes	Crop on the page works on unturned pictures: set Rotation to 0° first, or use the crop boxes
+	The number must be a divisor of {max}.	The number must be a divisor of {max}.
+	Nothing of this type in the document.	Nothing of this type in the document.
+	Automatically add words to list (First Letter)	Automatically add words to list (First Letter)
+	Automatically add words to list (INitial CAps)	Automatically add words to list (INitial CAps)
+	The system file dialog isn't available, so Word shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	The system file dialog isn't available, so Word shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.
+	No new sources in that file	No new sources in that file
+	Imported 1 source	Imported 1 source
+	Imported {n} sources	Imported {n} sources
+	Couldn't save {name}, so it is still open and nothing was lost: {error}	Couldn't save {name}, so it is still open and nothing was lost: {error}
+	In Default apps, choose Word for the document types you want it to open.	In Default apps, choose Word for the document types you want it to open.
+	Word is now the default app for Word documents.	Word is now the default app for Word documents.
+	Couldn't make Word the default: {error}	Couldn't make Word the default: {error}
+	Show the Start screen when Word starts	Show the Start screen when Word starts
+	On: Word opens on File › Home, with a blank document, the templates and your recent documents. Off: it opens a blank document.	On: Word opens on File › Home, with a blank document, the templates and your recent documents. Off: it opens a blank document.
+	{language}: {file} (unreadable: {reason})	{language}: {file} (unreadable: {reason})
+	AutoSave documents you have saved in Word	AutoSave documents you have saved in Word
+	Opens Settings › Default apps, where you choose Word for .docx and the other document types.	Opens Settings › Default apps, where you choose Word for .docx and the other document types.
+	Opens .docx, .doc, .rtf and .odt files and Word templates with Word from now on.	Opens .docx, .doc, .rtf and .odt files and Word templates with Word from now on.
+	Make Word the default for Word documents…	Make Word the default for Word documents…
+	To open Word documents with Word by default: select one in Finder, choose File › Get Info, pick Word under Open with, then click Change All.	To open Word documents with Word by default: select one in Finder, choose File › Get Info, pick Word under Open with, then click Change All.
+	Scale to paper size	Scale to paper size
+	{paper}   {width} × {height}	{paper}   {width} × {height}
+	Open a document first	Open a document first
+	Current Document	Current Document
+	Select a place in this document:	Select a place in this document:
+	Top of the Document	Top of the Document
+	Bookmarks	Bookmarks
+	Discard the recovery copy of {name}?	Discard the recovery copy of {name}?
+	This cannot be undone. Your original file stays unchanged.	This cannot be undone. Your original file stays unchanged.
+	Discard	Discard
+	Keep the password somewhere safe: without it nobody, Word included, can open the document. Leave both boxes empty to remove the password.	Keep the password somewhere safe: without it nobody, Word included, can open the document. Leave both boxes empty to remove the password.
