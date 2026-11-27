@@ -84,7 +84,8 @@ const VEU: u8 = 165;
 /// Mica. Drawn by the app itself so it works on any GPU and driver (a truly transparent window needs
 /// DirectComposition); without a wallpaper picture (solid colour desktop) the bar keeps its colour.
 pub fn fundo_mica(ui: &Ui, barra: Rect, cor: Color32) {
-    if !SEM_BARRA_DO_SISTEMA {
+    // Angerô, modo leve: sem o papel de parede (pesa em PC fraco).
+    if !SEM_BARRA_DO_SISTEMA || crate::leve::ativo() {
         return;
     }
     let Some(tex) = textura_papel(ui.ctx()) else { return };

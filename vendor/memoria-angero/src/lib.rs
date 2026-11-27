@@ -38,3 +38,42 @@ pub fn area_trabalho() -> Option<(f32, f32, f32, f32)> {
 pub fn area_trabalho() -> Option<(f32, f32, f32, f32)> {
     None
 }
+
+/// RAM física total, em bytes (só Windows). Office Angerô: decide o modo leve.
+#[cfg(target_os = "windows")]
+pub fn ram_total() -> Option<u64> {
+    #[repr(C)]
+    struct MemoryStatusEx {
+        length: u32,
+        memory_load: u32,
+        total_phys: u64,
+        avail_phys: u64,
+        total_page_file: u64,
+        avail_page_file: u64,
+        total_virtual: u64,
+        avail_virtual: u64,
+        avail_extended_virtual: u64,
+    }
+    #[link(name = "kernel32")]
+    unsafe extern "system" {
+        fn GlobalMemoryStatusEx(buffer: *mut MemoryStatusEx) -> i32;
+    }
+    let mut m = MemoryStatusEx {
+        length: std::mem::size_of::<MemoryStatusEx>() as u32,
+        memory_load: 0,
+        total_phys: 0,
+        avail_phys: 0,
+        total_page_file: 0,
+        avail_page_file: 0,
+        total_virtual: 0,
+        avail_virtual: 0,
+        avail_extended_virtual: 0,
+    };
+    // SAFETY: `m` é um MEMORYSTATUSEX válido com `length` preenchido, como a API pede.
+    (unsafe { GlobalMemoryStatusEx(&mut m) } != 0).then_some(m.total_phys)
+}
+
+#[cfg(not(target_os = "windows"))]
+pub fn ram_total() -> Option<u64> {
+    None
+}

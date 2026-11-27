@@ -21,6 +21,7 @@ macro_rules! tl {
 }
 
 pub mod a11y;
+pub mod leve;
 pub mod a11y_pane;
 pub mod async_saves;
 pub mod autoscroll;
@@ -1441,7 +1442,8 @@ impl WordApp {
     /// Whether animation effects are on: the Animation effects setting, where `System` follows
     /// what the system last reported (on when it reports nothing).
     pub fn animations_on(&self) -> bool {
-        self.ui.animations.enabled(self.system_animations)
+        // Angerô: modo leve (PC fraco) desliga as animações.
+        self.ui.animations.enabled(self.system_animations) && !leve::ativo()
     }
 
     /// What the system last said about its animation effects (`None`: it doesn't say).
@@ -1941,6 +1943,7 @@ impl WordApp {
 
     /// Per-frame logic before layout: control requests, screenshots, shortcuts, file drops.
     pub fn logic(&mut self, ctx: &egui::Context) {
+        leve::aplicar_estilo(ctx);
         let lang = i18n::Lang::from_pref(&self.ui.language);
         i18n::set_current(lang);
         // New documents are written in the interface's language when WordCraft can proof it

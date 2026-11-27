@@ -397,6 +397,10 @@ fn main() -> eframe::Result {
     // FXC, which needs no DLL of ours (#603; see graphics.rs).
     #[cfg(target_os = "windows")]
     graphics::configure(&mut options, eframe::wgpu::Backends::from_env());
+    // Angerô: modo leve (até 8 GB, até 4 núcleos ou vídeo por software; ver ui-egui leve.rs).
+    let ram = memoria_angero::ram_total();
+    let nucleos = std::thread::available_parallelism().map_or(2, |n| n.get());
+    wordcraft_ui_egui::leve::definir(wordcraft_ui_egui::leve::decidir(ram, nucleos, false));
     // Intel Macs: Metal's compiler aborts on wgpu's indirect-validation shaders (#2652).
     #[cfg(target_os = "macos")]
     graphics::configure_indirect_validation(&mut options, graphics::skips_indirect_validation(true, cfg!(target_arch = "x86_64")));
@@ -425,6 +429,15 @@ fn main() -> eframe::Result {
         "Word",
         options,
         Box::new(move |cc| {
+            // Angerô: vídeo por software (WARP, llvmpipe, GDI Generic) também liga o modo leve.
+            if let Some(rs) = &cc.wgpu_render_state {
+                let info = rs.adapter.get_info();
+                let nome = info.name.to_ascii_lowercase();
+                let software = info.device_type == eframe::wgpu::DeviceType::Cpu
+                    || ["llvmpipe", "softpipe", "gdi generic", "basic render"].iter().any(|n| nome.contains(n));
+                wordcraft_ui_egui::leve::definir(wordcraft_ui_egui::leve::decidir(ram, nucleos, software));
+                log::info!("graphics: adapter {:?} ({:?}); modo leve: {}", info.name, info.device_type, wordcraft_ui_egui::leve::ativo());
+            }
             // The system region picks the new document's paper, the units and the decimal
             // separator (#838).
             let region = region::system();
